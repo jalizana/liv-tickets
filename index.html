@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIV — Centro de Atención al Residente</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --teal: #00B4B4;
+    --teal-dark: #008888;
+    --teal-light: #e0f7f7;
+    --dark: #0f1923;
+    --text: #1a2632;
+    --text-muted: #6b7f90;
+    --border: #dde4ea;
+    --bg: #f4f7f9;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+  }
+
+  .card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 40px 36px;
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-mark {
+    width: 56px; height: 56px;
+    background: var(--teal);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 20px; color: white;
+    margin: 0 auto 16px;
+    letter-spacing: -1px;
+  }
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 24px;
+  }
+
+  .info-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .info-text strong {
+    color: var(--text);
+  }
+
+  .open-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .open-btn:hover {
+    background: var(--teal-dark);
+  }
+
+  .sla-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .footer {
+    margin-top: 32px;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  .footer a {
+    color: var(--teal);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo-mark">LIV</div>
+  <h1>Centro de Atención al Residente</h1>
+  <p class="tagline">vive tranquilo, nosotros lo gestionamos</p>
+
+  <div class="divider"></div>
+
+  <p class="info-text">
+    Usa este formulario para reportar problemas, hacer consultas o enviar comentarios a tu administración.<br><br>
+    <strong>Solo residentes registrados</strong> pueden enviar solicitudes.
+  </p>
+
+  <button class="open-btn" onclick="fdWidget.open()">
+    Enviar solicitud →
+  </button>
+
+  <div class="sla-note">
+    ⏱️ Tiempo máximo de respuesta: 24–48 horas hábiles
+  </div>
+</div>
+
+<div class="footer">
+  LIV Property Management · <a href="mailto:tickets@livpm.cl">tickets@livpm.cl</a>
+</div>
+
+<!-- Freshdesk Widget -->
+<script>
+function initFreshdesk() {
+  window.fdWidget.init({
+    token: "01KRNX1NVRRVNBT56WHWQ2K0YK",
+    host: "https://livpm.freshdesk.com",
+    widgetId: "01KRNX1RK8XT2YST1JDYY3XXPY"
+  });
+}
+function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://livpm.freshdesk.com/webchat/js/widget.js",e.onload=initFreshdesk,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
+</script>
+
+</body>
+</html>
